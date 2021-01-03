@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.LauncherActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.TesseractLauncher.AppBarOverlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/Theme.TesseractLauncher.PopupOverlay"
+            app:title="@string/apps_list" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <AutoCompleteTextView
+        android:id="@+id/autoTextAppSearch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/searchbox"
+        android:cursorVisible="true"
+        android:drawableLeft="@drawable/ic_search"
+        android:drawablePadding="5dp"
+        android:focusable="true"
+        android:hint="@string/search_application_s"
+        android:imeOptions="actionNext"
+        android:maxLength="11"
+        android:maxLines="1"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:textColorHint="@color/gray_transparent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appbar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerApplicationList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:divider="@color/gray"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/autoTextAppSearch" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
